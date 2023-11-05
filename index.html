@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coleta de Dados do Instagram</title>
+    <style>
+        body {
+            background-color: rgb(230, 213, 213); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .logo {
+            max-width: 500px; 
+            height: 5;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img class="logo" src="../static/imagens/logo_recortado.png" alt="Logo Instagram">
+    </div>
+    <h1>WebScraper de Dados do Instagram</h1>
+    <form action="/get_instagram_data" method="post">
+        <label for="username">Nome de Usuário do Instagram:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <input type="submit" value="Coletar Dados">
+    </form>
+</body>
+</html>
