@@ -23,6 +23,16 @@
         form {
             text-align: center;
         }
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px; /* Adicionado para espaço entre os grupos */
+        }
+        input[type="text"] {
+            width: 200px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -30,11 +40,22 @@
         <img class="logo" src="../static/imagens/logo_recortado.png" alt="Logo Instagram">
     </div>
     <h1>WebScraper de Dados do Instagram</h1>
-    <form action="/get_instagram_data" method="post">
-        <label for="username">Nome de Usuário do Instagram:</label>
-        <input type="text" id="username" name="username" required>
+    <form action="/solicitar_exclusao_dados" method="post">
+            <label for="username">Nome do Usuário do Instagram:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
         <br>
         <input type="submit" value="Coletar Dados">
+        <br>
+        <br>
+        <h4>Deseja solicitar a exclusão de seus dados? Informe seu e-mail e clique no botão abaixo.</h4>
+        <div class="input-group">
+            <label for="email">Endereço de E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <input type="submit" value="Solicitar Exclusão de Dados">
+        <br>
+
     </form>
 </body>
 </html>
