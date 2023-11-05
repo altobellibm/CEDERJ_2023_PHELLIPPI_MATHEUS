@@ -3,10 +3,10 @@ from flask import Flask
 app = Flask(__name__, static_folder='static', static_url_path='')
 import requests
 import csv
+import secrets
 
 app = Flask(__name__)
 
-# Simula uma lista de usuários autorizados (poderia ser uma base de dados real)
 usuarios_autorizados = ["usuario1", "usuario2", "usuario3"]
 
 @app.route('/')
@@ -17,11 +17,11 @@ def index():
 def get_instagram_data():
     try:
         username = request.form['username']
-        access_token = '821962829724167'  # Substitua com o seu token de acesso à API do Instagram
+        access_token = '821962829724167' 
 
         url = f'https://api.instagram.com/v1/users/self/media/recent/?access_token={access_token}'
         response = requests.get(url)
-        response.raise_for_status()  # Lança uma exceção se a resposta não for bem-sucedida
+        response.raise_for_status()  
 
         data = response.json()
 
